@@ -2,6 +2,7 @@ import numpy as np
 import geopy
 from io import StringIO #StringIO is not in python3 have to us io
 from matplotlib import image as img
+import requests
 
 
 
