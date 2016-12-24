@@ -1,7 +1,8 @@
 import numpy as np
 import geopy
-from io import BytesIO 
+from io import BytesIO
 from matplotlib import image as img
+from matplotlib import pyplot as plt
 import requests
 
 
