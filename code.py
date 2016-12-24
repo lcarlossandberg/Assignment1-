@@ -64,12 +64,12 @@ class Map(object):
         return np.sum(self.green(threshold))
 
 
-    def show_green(data, threshold = 1.1):
-        green = self.green(threshold)
-        out = green[:,:,np.newaxis]*array([0,1,0])[np.newaxis,np.newaxis,:]
-        buffer = BytesIO()
-        result = img.imsave(buffer, out, format='png')
-        return buffer.getvalue()
+#   def show_green(data, threshold = 1.1):
+#        green = self.green(threshold)
+#        out = green[:,:,np.newaxis]*array([0,1,0])[np.newaxis,np.newaxis,:]
+#        buffer = BytesIO()
+#        result = img.imsave(buffer, out, format='png')
+#        return buffer.getvalue()
 
 
 
