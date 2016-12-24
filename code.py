@@ -1,6 +1,6 @@
 import numpy as np
 import geopy
-from io import StringIO #StringIO is not in python3 have to us io
+from io import BytesIO 
 from matplotlib import image as img
 import requests
 
@@ -46,8 +46,8 @@ class Map(object):
                     
         self.image = requests.get(base, params=params).content
         # Fetch our PNG image data
-    
-        self.pixels= img.imread(StringIO(self.image))
+
+        self.pixels= img.imread(BytesIO(self.image))
         # Parse our PNG image as a numpy array
 
 
@@ -66,7 +66,7 @@ class Map(object):
     def show_green(data, threshold = 1.1):
         green = self.green(threshold)
         out = green[:,:,np.newaxis]*array([0,1,0])[np.newaxis,np.newaxis,:]
-        buffer = StringIO()
+        buffer = BytesIO()
         result = img.imsave(buffer, out, format='png')
         return buffer.getvalue()
 
