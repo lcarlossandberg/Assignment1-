@@ -1,6 +1,5 @@
 from matplotlib import image as img
 from matplotlib import pyplot as plt
-#from argparse import ArgumentParser
 import argparse
 from graph import Greengraph
 

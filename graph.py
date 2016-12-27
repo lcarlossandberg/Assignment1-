@@ -23,3 +23,4 @@ class Greengraph(object):
     def green_between(self, steps):
         return [Map(*location).count_green()
                 for location in self.location_sequence(self.geolocate(self.start), self.geolocate(self.end),steps)]
+
