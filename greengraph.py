@@ -21,6 +21,9 @@ if __name__ == "__main__":
     mygraph=Greengraph(args.start, args.end)
     data = mygraph.green_between(args.steps)
     plt.plot(data)
+    plt.title("Green pixels from "+args.start+" to "+args.end)
+    plt.xlabel("Number of steps")
+    plt.ylabel("Amount of green pixels")
 
     if args.out:
         plt.savefig(args.out)
