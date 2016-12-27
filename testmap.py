@@ -32,5 +32,19 @@ def test_green():
          test_Map = Map(51.5074,-0.1278)
          assert (test_Map.green(threshold) == mock_pixel).all() == True
 
+
+def test_count_green():
+    mock_map = open(os.path.join('London.png'),'rb')
+    threshold = 1.1
+    with patch('requests.get', return_value=Mock(content=mock_map.read())) as mock_get:
+        test_Map = Map(51.5074,-0.1278)
+        assert test_Map.count_green(threshold) == 106719
+
 #test_init()
 #test_green()
+#test_count_green()
+
+#show_green was not tested as it was removed for the code due to not being used
+
+
+
