@@ -1,7 +1,8 @@
 from graph import Greengraph
-from nose.tools import assert_almost_equal
+from nose.tools import assert_almost_equal, assert_equal
 from mock import Mock, patch
 import geopy
+import numpy as np
 
 
 def test_geolocate_int(): #test uses internet to check geolocate works
@@ -14,11 +15,17 @@ def test_geolocate(): #without internet
          Greengraph('New York','Chicago').geolocate('New York')
          mock_geocode.assert_called_with('New York', exactly_one=False)
 
+
+def test_location_sequence():#tried to use nose but doesnt work with tuples
+    lls=Greengraph.location_sequence(Greengraph("",""), (0,0),(100,100),3)
+    np.testing.assert_equal(lls[0],(0,0))
+    np.testing.assert_equal(lls[1],(50,50))
+
+
+
 test_geolocate_int()
 test_geolocate()
-
-
-
+test_location_sequence()
 
 
 
