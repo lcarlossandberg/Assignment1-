@@ -25,8 +25,8 @@ def test_init():#have an error which shouldnt happen as its getting mocked, made
                                         )
 
 def test_green():
-    mock_map = open(os.path.join('London.png'),'rb')
-    mock_pixel = np.load(os.path.join('LondonData.npy'))
+    mock_map = open(os.path.join(os.path.dirname(__file__),'fixtures','London.png'),'rb')
+    mock_pixel = np.load(os.path.join(os.path.dirname(__file__),'fixtures','LondonData.npy'))
     threshold = 1.1
     with patch('requests.get', return_value=Mock(content=mock_map.read())) as mock_get:
          test_Map = Map(51.5074,-0.1278)
@@ -34,7 +34,7 @@ def test_green():
 
 
 def test_count_green():
-    mock_map = open(os.path.join('London.png'),'rb')
+    mock_map = open(os.path.join(os.path.dirname(__file__),'fixtures','London.png'),'rb')
     threshold = 1.1
     with patch('requests.get', return_value=Mock(content=mock_map.read())) as mock_get:
         test_Map = Map(51.5074,-0.1278)

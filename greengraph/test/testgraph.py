@@ -1,4 +1,4 @@
-from graph import Greengraph
+from ..graph import Greengraph
 from nose.tools import assert_almost_equal, assert_equal
 from mock import Mock, patch
 import geopy
@@ -38,7 +38,7 @@ def test_green_between_int():#test uses internet
 
 
 def test_green_between():
-    mock_map = open(os.path.join('London.png'),'rb')
+    mock_map = open(os.path.join(os.path.dirname(__file__),'fixtures','London.png'),'rb')
     mock_geolocate = Mock(name="geolocate", side_effect=cycle([(1,1),(2,2)]))
     steps = 10
     
