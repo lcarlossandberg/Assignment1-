@@ -1,5 +1,5 @@
 #Greengraph
-Greengraph is a python 3 program, it creates a plot of the amount of green pixels at evenly spaced intervals between to locations specified on google maps.
+Greengraph is a python 3 program, it creates a plot of the amount of green pixels at evenly spaced intervals between two locations specified on google maps.
 
 #Installation
 This package can be installed using pip with:<br /> 
